@@ -13,6 +13,34 @@ var detectNetwork = function(cardNumber) {
   // The American Express network always starts with a 34 or 37 and is 15 digits long
 
   // Once you've read this, go ahead and try to implement this function, then return to the console.
+  if (cardNumber.length == 14 && (cardNumber.substring(0,2) == "38" || cardNumber.substring(0,2) == "39")) {
+  	return "Diner's Club";
+  }
+
+  if (cardNumber.length == 15 && (cardNumber.substring(0,2) == "34" || cardNumber.substring(0,2) == "37")) {
+  	return "American Express";
+  }
+
+  if ((cardNumber.length == 13 || cardNumber.length == 16 || cardNumber.length == 19) &&
+  		(cardNumber.substring(0,1) == "4")) {
+  	return "Visa";
+  }
+
+  if (cardNumber.length == 16 && 
+  		(cardNumber.substring(0,2) == "51" || cardNumber.substring(0,2) == "52" || 
+  			cardNumber.substring(0,2) == "53" || cardNumber.substring(0,2) == "54" || cardNumber.substring(0,2) == "55")) {
+  	return "MasterCard";
+  }
+
+  if ((cardNumber.length == 16 || cardNumber.length == 19) &&
+  	cardNumber.substring(0,4) == "6011" || (parseInt(cardNumber.substring(0,3)) >= 644 && parseInt(cardNumber.substring(0,3)) <= 649) || cardNumber.substring(0,2) == "65") {
+  	return "Discover";
+  }
+
+  if ((cardNumber.length >= 12 && cardNumber.length <= 19) &&
+  	(cardNumber.substring(0,4) == "5018" || cardNumber.substring(0,4) == "5020" || cardNumber.substring(0,4) == "5038" || cardNumber.substring(0,4) == "6304")) {
+  	return "Maestro";
+  }
 };
 
 
