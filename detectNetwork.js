@@ -55,9 +55,9 @@ var detectNetwork = function(cardNumber) {
   }
 
   if ((cardNumber.length >= 16 && cardNumber.length <= 19) && 
-  	((parseInt(cardNumber.substring(0,6) >= 622126 && parseInt(cardNumber.substring(0,6) <= 622925))) || 
-  		(parseInt(cardNumber.substring(0,3) >= 624 && parseInt(cardNumber.substring(0,3) <= 626))) || 
-  			(parseInt(cardNumber.substring(0,4) >= 6282 && parseInt(cardNumber.substring(0,4) <= 6288))))) {
+  	((parseInt(cardNumber.substring(0,6)) >= 622126 && parseInt(cardNumber.substring(0,6)) <= 622925) || 
+  		(parseInt(cardNumber.substring(0,3)) >= 624 && parseInt(cardNumber.substring(0,3)) <= 626) || 
+  			(parseInt(cardNumber.substring(0,4)) >= 6282 && parseInt(cardNumber.substring(0,4)) <= 6288))) {
   	return "China UnionPay";
   }
 }
